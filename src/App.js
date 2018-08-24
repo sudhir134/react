@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Radium from 'radium';
+//import Radium from 'radium';
 import './Person/Person.css';
 import Person from './Person/Person';
 
@@ -110,10 +110,7 @@ class App extends Component {
       backgroundColor: 'green',
       border: '2px solid gray',
       padding:'10px',
-      color:'white',
-      ':hover':{
-        backgroundColor:'lightgreen',
-      }
+      color:'white'
     }
     //add condition to toggle the useroutput
 
@@ -139,9 +136,7 @@ class App extends Component {
         </div>
       );
       btnStyle.backgroundColor = 'red';
-      btnStyle[':hover'] = {
-        backgroundColor : 'orange'
-      }
+      
     }
 
     return (
@@ -158,4 +153,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+export default App;
