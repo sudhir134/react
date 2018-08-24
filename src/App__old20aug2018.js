@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Radium from 'radium';
 import './Person/Person.css';
 import Person from './Person/Person';
 
@@ -105,30 +104,10 @@ class App extends Component {
       width:'50%',
       margin: '10px auto'
     };
-
-    const btnStyle = {
-      backgroundColor: 'green',
-      border: '2px solid gray',
-      padding:'10px',
-      color:'white',
-      ':hover':{
-        backgroundColor:'lightgreen',
-      }
-    }
     //add condition to toggle the useroutput
 
     let UserOutputVar = null;
     let Persons = this.state.Persons;
-    const classes  = [];
-
-    if(this.state.Persons.length<=2){
-      classes.push('red');
-    }
-
-    if(this.state.Persons.length<=1){
-      classes.push('bold');
-    }
-
     //this is the standard way to add conditional statements
     if (this.state.isShowUserOutput) {
       UserOutputVar = (
@@ -138,24 +117,19 @@ class App extends Component {
           })}
         </div>
       );
-      btnStyle.backgroundColor = 'red';
-      btnStyle[':hover'] = {
-        backgroundColor : 'orange'
-      }
     }
 
     return (
       <div className="App"> 
         <div className="UserInput" style={style}>
           <h3>UserInput Component</h3>
-          <p className={classes.join(' ')}>Its really working!!</p>
           <UserInput changeName={this.changeUsenameHandler} username={this.state.username}/>
         </div>
-        <button style= {btnStyle} onClick={this.toggleUserOutput}>Toggle UserOutput</button>
+        <button onClick={this.toggleUserOutput}>Toggle UserOutput</button>
           {UserOutputVar}
       </div>      
     );
   }
 }
 
-export default Radium(App);
+export default App;
