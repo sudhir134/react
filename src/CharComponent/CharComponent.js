@@ -8,4 +8,4 @@ const CharComponent = (props) => {
 	);
 }
 
-export default CharComponent;
+export default CharComponent;  //export changes
